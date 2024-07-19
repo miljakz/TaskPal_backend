@@ -1,0 +1,10 @@
+runtime: nodejs12  # or whichever version is appropriate
+env: standard
+instance_class: F1  # Choose an instance class based on your needs
+automatic_scaling:
+  min_instances: 1  # Minimum number of instances
+  max_instances: 3  # Maximum number of instances
+network: {}
+handlers:
+- url: /.*
+  script: auto
