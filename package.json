@@ -4,7 +4,8 @@
   "description": "Backend for TaskPal application",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "postdeploy": "echo 'Deployment is complete!'"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
