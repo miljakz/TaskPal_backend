@@ -2,7 +2,7 @@
   "name": "taskpal-backend",
   "version": "1.0.0",
   "description": "Backend for TaskPal application",
-  "main": "src/index.js",  // Adjusted if your entry file is inside the src folder
+  "main": "src/index.js",
   "scripts": {
     "start": "node index.js", 
     "build": "echo 'No build process required for backend.'",
