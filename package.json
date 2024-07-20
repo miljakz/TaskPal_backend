@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "build": "echo 'No build process required for backend.'",
     "postdeploy": "echo 'Deployment is complete!'"
   },
   "dependencies": {
