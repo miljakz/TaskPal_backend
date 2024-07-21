@@ -5,7 +5,7 @@ const {
   createCategory,
   deleteCategory,
   updateCategory
-} = require('../src/controllers/categoryController');
+} = require('../controllers/categoryController'); // Correct path to controllers
 
 // @route   GET /api/categories
 // @desc    Get all categories
