@@ -5,7 +5,7 @@ const {
   createCategory,
   deleteCategory,
   updateCategory
-} = require('../src/controllers/categoryController');
+} = require('../controllers/categoryController');
 
 router.get('/', getCategories);
 router.post('/', createCategory);
