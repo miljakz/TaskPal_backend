@@ -15,6 +15,15 @@ app.use(bodyParser.json());
 app.use('/api/categories', require('./src/routes/categoryRoutes'));
 app.use('/api/tasks', require('./src/routes/taskRoutes'));
 
+app.get('/', (req, res) => {
+  res.send('API is running...');
+});
+
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
