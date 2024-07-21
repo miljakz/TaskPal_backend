@@ -8,7 +8,6 @@ const getCategories = async (req, res) => {
     const categories = await Category.find();
     res.json(categories);
   } catch (err) {
-    console.error(err.message); // Log the error
     res.status(500).json({ message: err.message });
   }
 };
@@ -28,7 +27,6 @@ const createCategory = async (req, res) => {
     await newCategory.save();
     res.status(201).json(newCategory);
   } catch (err) {
-    console.error(err.message); // Log the error
     res.status(500).json({ message: err.message });
   }
 };
@@ -47,7 +45,6 @@ const deleteCategory = async (req, res) => {
     await category.remove();
     res.json({ message: 'Category removed' });
   } catch (err) {
-    console.error(err.message); // Log the error
     res.status(500).json({ message: err.message });
   }
 };
@@ -70,7 +67,6 @@ const updateCategory = async (req, res) => {
     const updatedCategory = await category.save();
     res.json(updatedCategory);
   } catch (err) {
-    console.error(err.message); // Log the error
     res.status(500).json({ message: err.message });
   }
 };
