@@ -1,33 +1,19 @@
 const mongoose = require('mongoose');
+require('dotenv').config();
 
 const connectDB = async () => {
   try {
-    const conn = await mongoose.connect(process.env.MONGO_URI);
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+      useCreateIndex: true,
+      useFindAndModify: false
+    });
     console.log(`MongoDB connected: ${conn.connection.host}`);
-
-    // Connection events
-    mongoose.connection.on('connected', () => {
-      console.log('Mongoose connected to db...');
-    });
-
-    mongoose.connection.on('error', err => {
-      console.log(err.message);
-    });
-
-    mongoose.connection.on('disconnected', () => {
-      console.log('Mongoose connection is disconnected...');
-    });
-
   } catch (err) {
     console.error(`Error: ${err.message}`);
-    process.exit(1);
+    process.exit(1); // Exit process with failure
   }
-
-  // Close the Mongoose connection, when receiving SIGINT
-  process.on('SIGINT', async () => {
-    await mongoose.connection.close();
-    process.exit(0);
-  });
 };
 
 module.exports = connectDB;
