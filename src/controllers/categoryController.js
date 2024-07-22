@@ -1,8 +1,6 @@
 const Category = require('../models/Category');
 
-// @desc    Get all categories
-// @route   GET /api/categories
-// @access  Public
+// Get all categories
 const getCategories = async (req, res) => {
   try {
     const categories = await Category.find();
@@ -12,9 +10,7 @@ const getCategories = async (req, res) => {
   }
 };
 
-// @desc    Create a new category
-// @route   POST /api/categories
-// @access  Public
+// Create a new category
 const createCategory = async (req, res) => {
   const { name } = req.body;
 
@@ -31,9 +27,7 @@ const createCategory = async (req, res) => {
   }
 };
 
-// @desc    Delete a category
-// @route   DELETE /api/categories/:id
-// @access  Public
+// Delete a category
 const deleteCategory = async (req, res) => {
   try {
     const category = await Category.findById(req.params.id);
@@ -49,9 +43,7 @@ const deleteCategory = async (req, res) => {
   }
 };
 
-// @desc    Update a category
-// @route   PUT /api/categories/:id
-// @access  Public
+// Update a category
 const updateCategory = async (req, res) => {
   const { name } = req.body;
 
