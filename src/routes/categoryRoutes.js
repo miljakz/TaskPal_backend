@@ -7,24 +7,16 @@ const {
   updateCategory
 } = require('../controllers/categoryController');
 
-// @route   GET /api/categories
-// @desc    Get all categories
-// @access  Public
+// Get all categories
 router.get('/', getCategories);
 
-// @route   POST /api/categories
-// @desc    Create a new category
-// @access  Public
+// Create a new category
 router.post('/', createCategory);
 
-// @route   DELETE /api/categories/:id
-// @desc    Delete a category
-// @access  Public
+// Delete a category
 router.delete('/:id', deleteCategory);
 
-// @route   PUT /api/categories/:id
-// @desc    Update a category
-// @access  Public
+// Update a category
 router.put('/:id', updateCategory);
 
 module.exports = router;
