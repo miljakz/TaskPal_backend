@@ -1,6 +1,4 @@
-// store/modules/time.js
-
-import axios from 'axios'; // Ensure axios is available for making HTTP requests
+import axios from 'axios';
 
 const state = {
     currentEntry: null,
