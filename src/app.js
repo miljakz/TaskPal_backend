@@ -3,7 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const morgan = require('morgan');
 const helmet = require('helmet');
-const secureRoutes = require('./routes/secureRoutes'); 
+const secureRoutes = require('./src/routes/secureRoutes');
+const userRoutes = require('./src/routes/userRoutes');
 
 const app = express();
 
@@ -11,7 +12,7 @@ const app = express();
 require('dotenv').config();
 
 // Middleware
-app.use(cors({ origin: 'https://frontendtaskpal.netlify.app' }));
+app.use(cors());
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
@@ -21,6 +22,7 @@ app.use(express.static('public'));
 
 // Routes
 app.use('/api', secureRoutes);
+app.use('/api', userRoutes); // Use user routes
 
 // Welcome route
 app.get('/', (req, res) => {
