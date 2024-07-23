@@ -11,7 +11,7 @@ const app = express();
 require('dotenv').config();
 
 // Middleware
-app.use(cors());
+app.use(cors({ origin: 'https://frontendtaskpal.netlify.app' }));
 app.use(helmet());
 app.use(morgan('dev'));
 app.use(bodyParser.json());
