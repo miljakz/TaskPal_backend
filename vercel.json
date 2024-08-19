@@ -11,5 +11,7 @@
       "src": "/(.*)",
       "dest": "/index.js"
     }
-  ]
+  ],
+  "buildCommand": "npm install && npm run vercel-build",
+  "installCommand": "npm install"
 }
