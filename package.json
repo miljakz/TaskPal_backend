@@ -10,7 +10,7 @@
     "dev": "nodemon index.js",
     "lint": "eslint .",
     "test": "jest",
-    "vercel-build": "npm install && npm run build"
+    "vercel-build": "npm run build"
   },
   "dependencies": {
     "body-parser": "^1.20.2",
